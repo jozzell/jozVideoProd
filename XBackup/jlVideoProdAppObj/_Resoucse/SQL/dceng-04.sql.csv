@@ -1,0 +1,63 @@
+video_id,video_type,video_desc,video_value,video_width,video_height,video_player,lookup_id,sys_id,lookup_flag,subject_text,subject_body
+1,100,"Shayla Sweet 16",91112346,500,281,quicktime,5,-12,0,NULL,NULL
+2,101,"Kaylin Garcia calendar signings @ Upscale Haircutters, Hempstead New York ",81931606,500,281,quicktime,5,-12,0,NULL,NULL
+3,102,"Holy Trinity Football (Highlight Real) 2013-10-05",76660552,500,281,quicktime,5,-12,0,NULL,NULL
+4,102,"Holy Trinity Football (Highlight Real) 2013-10-19",77684976,500,281,quicktime,5,-12,0,NULL,NULL
+5,102,"Holy Trinity Football (Highlight Real) 2013-09-28",76652169,500,281,quicktime,5,-12,0,NULL,NULL
+6,103,"2013 Spinney Hill (Manhasset/Great Neck) Community Picnic",DP8Lc46Omos,560,315,flash,5,-11,0,NULL,NULL
+7,103,"2007 Spinney Hill (Manhasset/Great Neck) Community Picnic",pnALWftqQac,560,315,flash,5,-11,0,NULL,NULL
+8,103,"2008 Spinney Hill (Manhasset/Great Neck) Community Picnic",376zI2flFOM,560,315,flash,5,-11,0,NULL,NULL
+9,103,"2009 Spinney Hill (Manhasset/Great Neck) Community Picnic",X8NeSGivu_8,560,315,flash,5,-11,0,NULL,NULL
+10,103,"2005 Spinney Hill (Manhasset/Great Neck) Community Picnic",18AOjX6xKHI,560,315,flash,5,-11,0,NULL,NULL
+11,103,"2006 Spinney Hill (Manhasset/Great Neck) Community Picnic",qhRJwqexu3U,560,315,flash,5,-11,0,NULL,NULL
+12,104,"2011 1st Annual Ruth Patillo Award Ceremony",o735GGQBvuo,560,315,flash,5,-11,0,NULL,NULL
+13,104,"2013 Banquet/Award Ceremony",Zx7ZTQfJY8I,560,315,flash,5,-11,0,NULL,NULL
+14,105,"2013 White Affair",yCA-x_unt7U,560,315,flash,5,-11,0,NULL,NULL
+15,105,"2013 Summer White Affair Day Party",yCA-x_unt7U,560,315,flash,5,-11,0,NULL,NULL
+16,106,"Holy Trinity vs Archbishop Stepinac (Freshman) 2013 09 28 ",bnX62s7K77U,560,315,flash,5,-11,0,NULL,NULL
+17,106,"HolyTrinity vs Chaminade (Freshman) 2013 10 05 ",jz4eV5jWeb4,560,315,flash,5,-11,0,NULL,NULL
+18,106,"HolyTrinity vs Monsignor (Freshman) 2013 10 19 ",T2E5_B30gHk,560,315,flash,5,-11,0,NULL,NULL
+19,107,"Here and Now w/ Sandra Bookman",xlFPCaAbVZw,560,315,flash,5,-11,2,NULL,NULL
+20,108,"Art Scene with Shirley Romaine",ItfQsWLyO4o,560,315,flash,5,-11,0,NULL,NULL
+21,200,"Get the Glory",V-gpaAurqQI,560,315,flash,5,-11,3,NULL,NULL
+22,201,"Over the Rainbow/A Wonderful Change",mBvTcCmkYpE,560,315,flash,5,-11,3,NULL,NULL
+23,203,"Pastor Julius Sloan & Family and Friends of Christ",g7uPPgAORYI,560,315,flash,5,-11,3,NULL,NULL
+24,203,"Voices of Inspiration 22nd anniversary (3)",3XTA2X74-Bg,560,315,flash,5,-11,3,NULL,NULL
+25,203,"Merrick Park Mens Choir",LuMoA8QCS34,560,315,flash,5,-11,3,NULL,NULL
+26,203,"Voices of Inspiration 22nd anniversary (2)",o4XDp1xs-YY,560,315,flash,5,-11,3,NULL,NULL
+27,203,"The Timothy Wright Memorial Choir",w0qdmQ9soKE,560,315,flash,5,-11,3,NULL,NULL
+28,203,"Voices of Inspiration 22nd anniversary (1)",pINXB7WRDrI,560,315,flash,5,-11,3,NULL,NULL
+29,203,"Rev. Everett (Butchie) Jenkins",XLlOlvOd95Y,560,315,flash,5,-11,3,NULL,NULL
+30,203,"Voices of Inspiration 22nd anniversary (4)",ic9V7fN0xGc,560,315,flash,5,-11,3,NULL,NULL
+31,203,"Gods Got It",Zpsl_LPLN3A,560,315,flash,5,-11,3,NULL,NULL
+32,203,Estatistics,N8UtcPyt95U,560,315,flash,5,-11,3,NULL,NULL
+33,203,"I Found The Lord Jesus",084_w2qhaeY,560,315,flash,5,-11,3,NULL,NULL
+34,204,"Maxine Brown (I Am)",5AGdlBrHlQw,560,315,flash,5,-11,3,NULL,NULL
+35,204,"Male Chorus - Merrick Park B,C",3S3xpw0e1oY,560,315,flash,5,-11,3,NULL,NULL
+36,204,"Deaconess V. Brown (Its Only A Test)",cCt4epAs9XI,560,315,flash,5,-11,3,NULL,NULL
+37,204,"Felicia Sloane (Gods Got It)",HdcVPpAxI_U,560,315,flash,5,-11,3,NULL,NULL
+38,204,"Reginald Staggers (Aint It A Wonda)",eKl9SgvnjFM,560,315,flash,5,-11,3,NULL,NULL
+39,204,"Linda Pringle (Just For Me)",BTEUZrL6sl4,560,315,flash,5,-11,3,NULL,NULL
+40,204,"The Voices of Inspiration Community Choir (1)",r0V4ACRDWW4,560,315,flash,5,-11,3,NULL,NULL
+41,204,"Esstatictis (1)",Z9gSg9vk1CI,560,315,flash,5,-11,3,NULL,NULL
+42,204,"Esstatictis (2)",di24dvdYS_k,560,315,flash,5,-11,3,NULL,NULL
+43,204,"Kevin Terry (Hold On)",gILOUHCfJKM,560,315,flash,5,-11,3,NULL,NULL
+44,204,"Rescue Me",pOz47JEb1NQ,560,315,flash,5,-11,3,NULL,NULL
+45,204,"Institutional Radio Choir (COGIC)",vd8mhgHF86w,560,315,flash,5,-11,3,NULL,NULL
+46,204,"Sanctuary Choir Merrick Park B.C.",ognwr_Kf37A,560,315,flash,5,-11,3,NULL,NULL
+47,204,"Pastor Jason Hendrickson",NloHQJ3NCxU,560,315,flash,5,-11,3,NULL,NULL
+48,202,"Anaysha Figueroa-Cooper (Because Of The Blood )",LYRZKDJhz3Y,560,315,flash,5,-11,3,NULL,NULL
+49,200,"Im Glad I Dont Look Like",c3Nr1AdcTDA,560,315,flash,5,-11,3,NULL,NULL
+50,204,"New Zionaires",fufBTNnhBDc,560,315,flash,5,-11,3,NULL,NULL
+51,205,"Pastor Jason Hendrickson",w9mr21pISCU,560,315,flash,5,-11,3,NULL,NULL
+52,205,"Praise Dancers Merrick Park B.C.",kzbmONdfgZ4,560,315,flash,5,-11,3,NULL,NULL
+53,205,"Voices of Inspiration Community Choir (2013)",3Tf6qRLrwTM,560,315,flash,5,-11,3,NULL,NULL
+54,205,"Pastor David Wright & TWMC",bSg-CwQxTeo,560,315,flash,5,-11,3,NULL,NULL
+55,205,"Kayren Elcock",qLExcaqScRY,560,315,flash,5,-11,3,NULL,NULL
+56,205,"Sheila Crew-Bradley",Oa8AqCeTBbY,560,315,flash,5,-11,3,NULL,NULL
+57,205,"Trudie Bolles",krGsLfM4gec,560,315,flash,5,-11,3,NULL,NULL
+58,205,"Professor Ronald Banks",z0s-VGhg7Zo,560,315,flash,5,-11,3,NULL,NULL
+59,206,"Feature film:Spinney Hill, The African American History of Manhasset & Great Neck ",PAyFMHMQPNs,560,315,flash,5,-11,3,NULL,NULL
+60,207,"Leone Baum: The Woman behind the work (Trailblazer)",3cxcTudlQQ0,560,315,flash,5,-11,3,NULL,NULL
+61,208,"Spinney Hill (bonus footage) ",oKuy9Qp6Ha0,560,315,flash,5,-11,3,NULL,NULL
+62,210,"Little Neck Beverage Corp ",PmXRNNSalgs,560,315,flash,5,-11,3,NULL,NULL
