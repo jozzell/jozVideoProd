@@ -853,10 +853,7 @@ exists or setup the property manually. For example like this:
                 COMPILATION SECTION
             -->
     <target depends="init" if="no.dist.ear.dir" name="deps-module-jar" unless="no.deps">
-        <ant antfile="${project._reusableObj}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
-        <ant antfile="${project._reusableObjV2}/build.xml" inheritall="false" target="jar">
+        <ant antfile="${project._reusableObjV3}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
         <ant antfile="${project.jozVideoProdObj}/build.xml" inheritall="false" target="jar">
@@ -864,10 +861,7 @@ exists or setup the property manually. For example like this:
         </ant>
     </target>
     <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps">
-        <ant antfile="${project._reusableObj}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
-        <ant antfile="${project._reusableObjV2}/build.xml" inheritall="false" target="jar">
+        <ant antfile="${project._reusableObjV3}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
         <ant antfile="${project.jozVideoProdObj}/build.xml" inheritall="false" target="jar">
@@ -1017,14 +1011,13 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,-do-dist-with-manifest,-do-dist-without-manifest" name="do-dist"/>
     <target depends="init" if="dist.ear.dir" name="library-inclusion-in-manifest">
+        <copyfiles files="${reference.jozVideoProdObj.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${reference._reusableObjV3.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs.jsf20.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${reference._reusableObj.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${reference._reusableObjV2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._SunRowSet.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._SLF4J.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._log4j.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._javaxChange.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${reference.jozVideoProdObj.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._PrimeFaces.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._ApacheCommonLoging.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs._primefaces-extensions.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
@@ -1040,14 +1033,13 @@ exists or setup the property manually. For example like this:
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
     <target depends="init" name="library-inclusion-in-archive" unless="dist.ear.dir">
+        <copyfiles files="${reference.jozVideoProdObj.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${reference._reusableObjV3.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.jsf20.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${reference._reusableObj.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${reference._reusableObjV2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._SunRowSet.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._SLF4J.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._log4j.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._javaxChange.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${reference.jozVideoProdObj.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._PrimeFaces.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._ApacheCommonLoging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs._primefaces-extensions.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
@@ -1472,8 +1464,7 @@ exists or setup the property manually. For example like this:
                 CLEANUP SECTION
             -->
     <target depends="init" name="deps-clean" unless="no.deps">
-        <ant antfile="${project._reusableObj}/build.xml" inheritall="false" target="clean"/>
-        <ant antfile="${project._reusableObjV2}/build.xml" inheritall="false" target="clean"/>
+        <ant antfile="${project._reusableObjV3}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.jozVideoProdObj}/build.xml" inheritall="false" target="clean"/>
     </target>
     <target depends="init" name="do-clean">

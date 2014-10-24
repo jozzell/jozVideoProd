@@ -41,7 +41,7 @@ public class calObjMgr implements Serializable, mgnInterface {
     private Date startDate, endDate;
     private String DeptList = null;
     private ScheduleModel eventModel;
-    public static final Logger logger = (Logger) LoggerFactory.getLogger(calObjMgr.class);
+    public  final Logger logger = (Logger) LoggerFactory.getLogger(calObjMgr.class);
 
     public calObjMgr(mgnMgrObjInterface i) {
         iface = i;
