@@ -27,7 +27,7 @@ public class videoMgrObj implements Serializable{
     private List<videoBean> list;
     private videoBean videoBean;
     
-    public static final String 
+    public final String 
             videoCntr    = "./pgVideo/videoViewPg.xhtml";
             
     private mgrVideoProductionInterface iface;

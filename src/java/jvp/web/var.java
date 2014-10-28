@@ -14,8 +14,6 @@ import java.io.Serializable;
  */
 public class var implements Serializable{
     public boolean ok = false;
-    //public static final String
-     //   //mainXHTML = 
-        //defaultHome = "./spinneyHill_Cover.xhtml";
+   
    
 }

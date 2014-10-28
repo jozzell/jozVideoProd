@@ -7,6 +7,7 @@
 package jvp.web;
 
 import cv.bisc.db.dbMgr;
+import cv.bisc.db.dbMgrEnumType;
 import java.io.IOException;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -76,7 +77,8 @@ public class mgrVideoProduction implements mgrVideoProductionInterface,videoMgrO
    @Override
     public  dbMgrInterface getObj(){
         if (dbMgr == null){
-            dbMgr = new dbMgr("jdbc/jvp", dbMgr.typeMySql);
+            dbMgr = new dbMgr("jdbc/jvp", dbMgrEnumType.typeMySql.getType());
+            
         }
         return dbMgr;
     }
