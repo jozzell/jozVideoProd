@@ -1,20 +1,27 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+Download FastStone Photo Resizer
+http://www.faststone.org/FSResizerDownload.htm
+
+
  */
 
 package jvp.web;
 
-import cv.bisc.db.dbMgr;
-import cv.bisc.db.dbMgrEnumType;
 import java.io.IOException;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import obj.db.v1.dbMgrInterface;
+import jvp.obj.bean.userBean;
+import jvp.obj.eNum.eNumVideoIDs;
+import mgn.obj.usr.userObj;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -22,33 +29,132 @@ import obj.db.v1.dbMgrInterface;
  */
 @ManagedBean
 @SessionScoped
-public class mgrVideoProduction implements mgrVideoProductionInterface,videoMgrObjMenuInterface, Serializable {
-    private videoMgrObj videoMgrObj;
+public final class mgrVideoProduction extends mgrVideoProduction_EL implements videoMgrObjMenuInterface,Serializable {
+    //private videoMgrObj videoMgrObj;
     private videoMgrObjMenu videoMgrObjMenu;
-    private boolean start = true;
-   
-    private String 
-            prefix = "jozVideoPrd/",
-            panelWest="./menu.xhtml",
+    private boolean start = true,login=false,videoEditing=false,refreshList=true;
+    private String newPath = null;
+    private userBean userBean;
+    private final String    
+            
+            panelWest="./menu.xhtml";
+     private String 
+             misc,
+            //videoGroupDesc,
             panelCenter= null;
-    private dbMgr dbMgr;
-    private int cnt;
-    //private boolean ok = false;
-    /**r
-     * @return the videoMgrObj
-     */
-    public void refreshSession(){
-        cnt++;
+    private int cntr=0,videoSysId,videoId,selectId;//videoType=208,
+    public eNumVideoIDs Current_eNumVideoIDs;
+    public mgrVideoProduction(){
+         refreshSession();
     }
-    public int refreshSessionCnt(){
-        return cnt;
+    
+   
+    public void userLogin(){
+        getUserBean().setUserPass(null);
+        forwardCntr("user/login.xhtml");
     }
-    public void setHome(){
-           panelCenter = "./spinneyHill_Cover.xhtml";
+    public void chkLogin(){
+         userObj userObj = new userObj();
+         String email = this.getUserBean().getEMail();
+         this.userBean = userObj.login(getUserBean().getEMail(), getUserBean().getUserPass(), this.getObj());
+         if(userBean != null) {
+             getUserBean().setUserPass(null);
+             login = true;
+             this.setHome();
+         } else {
+             this.getUserBean().setEMail(email);
+             login = false;
+             RequestContext.getCurrentInstance().execute("PF('dialogWidget').show()");
+             
+         }
+     }
+    public void userLogout(){
+        this.login = false;
+        ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+        ec.invalidateSession();
+        try {
+            ec.redirect(ec.getRequestContextPath());
+        } catch (IOException ex) {
+            Logger.getLogger(mgrVideoProduction.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.forward();
        
     }
+     public boolean isLogin() {
+        return login;
+    }
+    
+    // ==========================================
+    public void setVideoId(int i){
+        this.videoId = i;
+       
+    }
+    public int getVideoId(){
+        return videoId;
+    }
+    public String getVideoGrpDesc(){
+        return this.Current_eNumVideoIDs.getTitle();
+    }
+    public void setHome(){
+        setVideoType(Current_eNumVideoIDs.Events);
+        //this.setVideoGrpDesc("Spinney Hill Documentary");
+        //videoType = 208;
+        //panelCenter = "./spinneyHill_Cover.xhtml";
+       //panelCenter = "./videoViewPgEditingBrw.xhtml";
+    }
+    public void setSpinneyHill(){
+        setVideoType(Current_eNumVideoIDs.SpinMain);
+        //setHome();
+        //this.setVideoGrpDesc("Spinney Hill Documentary");
+       // videoType = 208;
+        //panelCenter = "./spinneyHill_Cover.xhtml";
+        //this.forward();
+    }
+    //private void setVideoGrpDesc(String str){
+    //    videoGroupDesc = str;
+    //}
+    //rrent_eNumVideoIDs
+    // public void setVideoType(int x,String desc) {
+    //     setVideoGrpDesc(desc);
+     //    setVideoType(x);
+     //}
+     @Override //Cu
+     public void setVideoType(eNumVideoIDs x) {
+         refreshList = true;
+         Current_eNumVideoIDs = x;
+         setVideoType();
+     }
+    //public void setVideoType(int x) {
+     //   if (x != 0){
+     //       videoType = x;
+     //       setVideoType();
+     //   }
+    //}
+    public void setVideoType() {
+        forwardCntr("pgVideo/videoViewPgEditingBrw.xhtml");
+    }
+    public int getVideoType() {
+        return Current_eNumVideoIDs.getId();
+    }
+    @Override
+    public void setVideoSysId(int videoSysId) {
+        this.videoSysId = videoSysId;
+        this.forwardCntr("pgVideo/videoBrwEvents.xhtml");
+    }
+    public int getVideoSysId() {
+        return videoSysId;
+    }
+    
+    // ==========================================
+    public int getCntr(){
+        return cntr++;
+    }
+    public int refreshSessionCnt(){
+        return cntr;
+    }
+    
     public String getSpinnellHillImage(){
-        return prefix+"spinneyHill_Cover.jpg";
+        return "/jvp/spinneyHill_Cover.jpg";
     }
     public String getJvpInclude(){
         if (!start){
@@ -59,45 +165,23 @@ public class mgrVideoProduction implements mgrVideoProductionInterface,videoMgrO
         //
         
     }
-    public String getWebSiteName(){
-        return prefix+"cooltext1674641146.png";
-    }
-    public String logout() throws IOException{
-        ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
-        ec.invalidateSession();
-        ec.redirect(ec.getRequestContextPath());
-        return "";
-    }
-    @Override
-    public videoMgrObj getVideoMgrObj() {
-        if (videoMgrObj == null) videoMgrObj = new videoMgrObj(this);
-        return videoMgrObj;
-    }
-
-   @Override
-    public  dbMgrInterface getObj(){
-        if (dbMgr == null){
-            dbMgr = new dbMgr("jdbc/jvp", dbMgrEnumType.typeMySql.getType());
-            
-        }
-        return dbMgr;
-    }
-    @Override
+   
+    
+    
     public void forward() {
        
-        prefix= "";
+        //prefix= "";
         start= false;
-        (new factoryObj()).FacesContextForward(getRoot(), FacesContext.getCurrentInstance());
+        (new factoryObj()).FacesContextForward("/jozVideoProd", FacesContext.getCurrentInstance());
     }
-    @Override
+    
      public void forwardCntr(String center){
          panelCenter = center;
+         System.out.println(center);
          forward();
      }
-    public String getRoot(){
-            return "jvp.xhtml"; //"jozVideoPrd/jvp.xhtml";
-       
-    }
+    
+    
     
     public videoMgrObjMenu getVideoMgrObjMenu() {
         if (videoMgrObjMenu == null) videoMgrObjMenu = new videoMgrObjMenu(this);
@@ -120,5 +204,99 @@ public class mgrVideoProduction implements mgrVideoProductionInterface,videoMgrO
         }
         return panelCenter;
     }
+
+    /**
+     * @return the login
+     */
+  
+   
+
+    /**
+     * @return the newPath
+     */
+   
+    public String getNewPath() {
+       if (newPath == null)newPath = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(Calendar.getInstance().getTime());
+        //if (newPath == null)newPath = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
+        return "/"+newPath;
+    }
+
+    /**
+     * @return the misc
+     */
+    public String getMisc() {
+        return misc;
+    }
+
+    /**
+     * @param misc the misc to set
+     */
+    public void setMisc(String misc) {
+        this.misc = misc;
+    }
+
+    /**
+     * @return the videoEditing
+     */
+    public boolean isVideoEditing() {
+        return videoEditing;
+    }
+
+    /**
+     * @param videoEditing the videoEditing to set
+     */
+    public void setVideoEditing(boolean videoEditing) {
+        this.videoEditing = videoEditing;
+        misc = null;
+    }
+
+    /**
+     * @return the userBean
+     */
+    public userBean getUserBean() {
+        if (userBean == null){
+            userBean = new userBean();
+        }
+        return userBean;
+    }
+
+    /**
+     * @return the selectId
+     */
+    //public int getSelectId() {
+    //    return selectId;
+    //}
+
+    /**
+     * @param selectId the selectId to set
+     */
+    public void setSelectId(int selectId) {
+        this.selectId = selectId;
+    }
+
+    /**
+     * @return the refreshList
+     */
+    public boolean isRefreshList() {
+        return refreshList;
+    }
+
+    /**
+     * @param refreshList the refreshList to set
+     */
+    public void setRefreshList(boolean refreshList) {
+        this.refreshList = refreshList;
+    }
+   
+   
+     
+
+
+   
+
+    
+    
+
+   
 }
 

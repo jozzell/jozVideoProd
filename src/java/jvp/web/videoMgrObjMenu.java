@@ -5,9 +5,8 @@
  */
 
 package jvp.web;
-
 import java.io.Serializable;
-
+import jvp.obj.eNum.eNumVideoIDs;
 /**
  *
  * @author lmeans
@@ -19,69 +18,145 @@ public class videoMgrObjMenu implements Serializable{
         iface = i;
     }
     
+    
+    // ==============================
+   public void setTrackClubIndoor(){
+        iface.setVideoType(eNumVideoIDs.TrackClubIndoor);
+        //iface.setVideoType(97,"Baldwin Blazers (Indoor)");
+    }
+   public void setTrackClubOutdoor(){
+       iface.setVideoType(eNumVideoIDs.TrackClubOutdoor);
+        //iface.setVideoType(1113,"Baldwin Blazers (Outdoor)");
+    }
+   public void setTrackClubAAU(){
+       iface.setVideoType(eNumVideoIDs.TrackClubAAU);
+        //iface.setVideoType(1114,"Baldwin Blazers (AAU)");
+    }
+   
+     public void calEOC(){
+         iface.setVideoType(eNumVideoIDs.EOC);
+         //iface.setVideoType(1107, "cal/church_EOC.xhtml");
+        
+    }
+    public void calFirst(){
+        iface.setVideoType(eNumVideoIDs.FirstBaptist);
+         //iface.setVideoType(1106, "Royal Priesthool (Anniversary)");
+       
+    }
+    public void calFirst2009(){
+        iface.setVideoType(eNumVideoIDs.FirstBaptist2009);
+         //iface.setVideoType(1206, "Gospel Concert (2010)");
+       
+    }
+    public void calMount(){
+        iface.setVideoType(eNumVideoIDs.MountOlive);
+         //iface.setVideoType(1105, "cal/church_mtolive.xhtml");
+        
+        
+    }
+    public void calFirstEvo(){
+        iface.setVideoType(eNumVideoIDs.FirstBaptistEvolution);
+    }
+    
+     
     // ==============================
     public void setHearAndNow(){
-        iface.getVideoMgrObj().switchVideo(107);
+        iface.setVideoType(eNumVideoIDs.HearAndNow);
+        //iface.setVideoType(107,"Jozzell Video Production");
     }
     public void setShirley(){
-        iface.getVideoMgrObj().switchVideo(108);
+        iface.setVideoType(eNumVideoIDs.ShirleyPublicAccess);
+        //iface.setVideoType(108,"Jozzell Video Production");
     }
     // ==============================
    
     public void setVideoSports(){
-        iface.getVideoMgrObj().switchVideo(102);
+        iface.setVideoType(eNumVideoIDs.VideoSports);
+        //iface.setVideoType(102,"Football Highlight Real");
     }
     public void setVideoSportsGame(){
-        iface.getVideoMgrObj().switchVideo(106);
+        iface.setVideoType(eNumVideoIDs.VideoSportsGame);
+        //iface.setVideoType(106,"Jozzell Video Production");
     }
     // ==============================
     public void setEvents(){
-        iface.getVideoMgrObj().switchVideo(101);
+        iface.setVideoType(eNumVideoIDs.Events);
+        //iface.setVideoType(101,"Events");
     }
      public void setVideoSweet16(){
-        iface.getVideoMgrObj().switchVideo(100);
+         iface.setVideoType(eNumVideoIDs.VideoSweet16);
+        //iface.setVideoType(100,"Jozzell Video Production");
     }
     public void setEventsRedCarpet(){
-        iface.getVideoMgrObj().switchVideo(105);
+        iface.setVideoType(eNumVideoIDs.EventsRedCarpet);
+       // iface.setVideoType(105,"Jozzell Video Production");
     }
+    
     // ==============================
     public void setCommunityPicnic(){
-        iface.getVideoMgrObj().switchVideo(103);
+        iface.setVideoType(eNumVideoIDs.CommunityPicnic);
+       // iface.setVideoType(103,"Jozzell Video Production");
     }
     public void setCommunityAwardCeremony(){
-        iface.getVideoMgrObj().switchVideo(104);
+        iface.setVideoType(eNumVideoIDs.CommunityAwardCeremony);
+      //  iface.setVideoType(104,"Jozzell Video Production");
     }
     // ==============================
     public void setMsRucker(){
-        iface.getVideoMgrObj().switchVideo(201);
+        iface.setVideoType(eNumVideoIDs.MsRucker);
+        //iface.setVideoType(201,"Jozzell Video Production");
     }
     public void setMrClean(){
-        iface.getVideoMgrObj().switchVideo(200);
+        iface.setVideoType(eNumVideoIDs.MrClean);
+        //iface.setVideoType(200,"Jozzell Video Production");
     }
-    public void set22nd(){
-        iface.getVideoMgrObj().switchVideo(203);
-    }
+   
     public void setAnaysha(){
-        iface.getVideoMgrObj().switchVideo(202);
+        iface.setVideoType(eNumVideoIDs.Anaysha);
+        //iface.setVideoType(202,"Jozzell Video Production");
+    }
+    
+     public void set22nd(){
+         iface.setVideoType(eNumVideoIDs.VOI22nd);
+        //iface.setVideoType(203,"22nd Anniversary (2011)"  );
     }
     public void set23nd(){
-        iface.getVideoMgrObj().switchVideo(204);
+        iface.setVideoType(eNumVideoIDs.VOI23nd);
+        //iface.setVideoType(204,"23rd Anniversary (2012)");
     }
     public void set24nd(){
-        iface.getVideoMgrObj().switchVideo(205);
+        iface.setVideoType(eNumVideoIDs.VOI24nd);
+        //iface.setVideoType(205,"24th Anniversary (2013)");
+    }
+    public void set25nd(){
+        iface.setVideoType(eNumVideoIDs.VOI25nd);
+        //iface.setVideoType(99,"25th Anniversary (2014) Brooklyn Marriott");
+    }
+    public void set26nd(){
+        iface.setVideoType(eNumVideoIDs.VOI26nd);
+        //iface.setVideoType(98,"26th Anniversary (2015)");
     }
     // ==============================
      public void setSpinMain(){
-        iface.getVideoMgrObj().switchVideo(206);
+         iface.setVideoType(eNumVideoIDs.SpinMain);
+        //iface.setVideoType(206,"Jozzell Video Production");
     }
     public void setSpinBonus(){
-        iface.getVideoMgrObj().switchVideo(208);
+        iface.setVideoType(eNumVideoIDs.SpinBonus);
+        //iface.setVideoType(208,"Jozzell Video Production");
     }
     public void setLeone(){
-        iface.getVideoMgrObj().switchVideo(207);
+        iface.setVideoType(eNumVideoIDs.Leone);
+        //iface.setVideoType(207,"Jozzell Video Production");
     }
     // ==============================
     public void setAdds(){
-        iface.getVideoMgrObj().switchVideo(210);
+        iface.setVideoType(eNumVideoIDs.Adds);
+        //iface.setVideoType(210,"Jozzell Video Production");
     }
+    public void setScott(){
+        iface.setVideoType(eNumVideoIDs.BeerScott);
+        //iface.setVideoType(210,"Jozzell Video Production");
+    }
+    
 }

@@ -16,7 +16,7 @@ import jvp.obj.video.videoObj;
  *
  * @author lmeans
  */
-public class videoMgrObjBean extends mgrVideoProduction_EL implements Serializable{
+public class videoMgrObjBean implements Serializable{
     private int videoType = 100,picked;
     private List<videoBean> list;
     private videoBean videoBean;
@@ -44,7 +44,7 @@ public class videoMgrObjBean extends mgrVideoProduction_EL implements Serializab
         return videoBean;
     }
     private void genList(){
-        list = (new videoObj()).getVideoBeanList(videoType, getObj());
+        list = (new videoObj()).getVideoBeanList(videoType, iface.getObj());
         if (list != null && list.size() > 0){
             videoBean = list.get(0);
         } else {

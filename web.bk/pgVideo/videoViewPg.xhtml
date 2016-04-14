@@ -33,10 +33,8 @@
                            height="#{mgrVideoProduction.videoMgrObj.videoBean.videoHeight}"
                            player="#{mgrVideoProduction.videoMgrObj.videoBean.videoPlayer}"/>
             
-             <pou:poll interval="60" listener="#{mgrVideoProduction.refreshSession()}" update="txt_count" />
-             <h:outputText id="txt_count"  style=" text-align:  right"
-                           value="#{mgrVideoProduction.refreshSessionCnt()}" 
-                           />
+             
+            
     
         </h:panelGrid>
 

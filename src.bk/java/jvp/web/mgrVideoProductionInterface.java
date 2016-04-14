@@ -6,14 +6,16 @@
 
 package jvp.web;
 
+import obj.db.v1.dbMgrInterface;
+
 /**
  *
  * @author lmeans
  */
 public interface mgrVideoProductionInterface {
-  //public boolean isLogin();
-    //public String getNewPath();
-    //public abstract void forward();
-    //public abstract void forwardCntr(String center);
-    //public abstract dbMgrInterface getObj();
+    public boolean isLogin();
+    public String getNewPath();
+    public abstract void forward();
+    public abstract void forwardCntr(String center);
+    public abstract dbMgrInterface getObj();
 }

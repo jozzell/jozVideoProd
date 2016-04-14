@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"   
+       xmlns:pou="http://primefaces.org/ui">
+
+    <pou:poll interval="300" listener="#{mgrVideoProduction.refreshSession()}" />
+    <pou:megaMenu  orientation="horizontal" autoDisplay="false"  >
+
+        <pou:menuitem value="HOME"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setEvents()}" />  
+        <pou:menuitem value="Spinney Hill Documentary"  
+                      style=" font-size: 14px; text-align:  center"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setSpinBonus() }" />
+        <pou:submenu label="Manhasset/Great Neck" style=" font-size: 14px" >
+
+
+            <pou:column >
+                <pou:submenu label="Events">
+                    <pou:menuitem value="Community Picnic"  
+                                  style=" font-size: 14px"
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.setCommunityPicnic()}" />
+                    <pou:menuitem value="Banquet/Award Ceremony"  
+                                  style=" font-size: 14px"
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.setCommunityAwardCeremony()}" />
+                </pou:submenu>
+            </pou:column>
+
+        </pou:submenu>
+         <pou:submenu label="Beer Connoisseur" style=" font-size: 14px" >
+            <pou:column >
+                <pou:submenu label="Little Neck Beverage">
+                    <pou:menuitem value="Scott Pereira" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.setScott()}"
+                                  style=" font-size: 13px"  />
+                    
+                </pou:submenu>
+
+            </pou:column>
+        </pou:submenu>
+        
+        
+        
+        
+        <pou:submenu label="Gospel Music" style=" font-size: 14px" >
+            <pou:column >
+                <pou:submenu label="Highlights">
+                    
+                    <pou:menuitem value="Bishop Richard (Mr Clean) White" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.setMrClean()}"
+                                  style=" font-size: 13px"  />
+                    
+                </pou:submenu>
+            </pou:column>
+            <pou:column    >
+
+                <pou:submenu label="Voices of Inspiration"  >
+                    <pou:menuitem value="26th Anniversary 2015 " 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.set26nd()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="25th Anniversary 2014 (Brooklyn Marriott)" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.set25nd()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="24nd Anniversary 2013" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.set24nd()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="23nd Anniversary 2012" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.set23nd()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="22nd Anniversary 2011" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.set22nd()}"
+                                  style=" font-size: 13px"  />
+
+
+
+                </pou:submenu>
+
+
+
+            </pou:column>
+            <pou:column >
+                <pou:submenu label="Mt. Olive Baptist Church">
+                    <pou:menuitem value="Men's Day 2014" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.calMount()}"
+                                  style=" font-size: 13px"  />
+                </pou:submenu>
+                <pou:submenu label="First Baptist Church">
+                    <pou:menuitem value="The Evolution of Gospel Music" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.calFirstEvo()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="Royal Priesthool 4th Anniversary" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.calFirst()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="Gospel Concert (200?)" 
+                                  action="#{mgrVideoProduction.videoMgrObjMenu.calFirst2009()}"
+                                  style=" font-size: 13px"  />
+                </pou:submenu>
+            </pou:column>
+
+
+        </pou:submenu>
+         <pou:submenu label="Sports" style=" font-size: 14px" >
+              <pou:column >
+                <pou:submenu label="Football">
+                <pou:menuitem value="Holy Trinity"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setVideoSports()}" />  
+                </pou:submenu>
+                   </pou:column>
+              <pou:column>
+                  <pou:submenu label="Track and Field (OutDoor)">
+                      <pou:menuitem value="Baldwin Blazers (AAU)"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setTrackClubAAU()}" />  
+                      <pou:menuitem value="Baldwin Blazers"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setTrackClubOutdoor()}" />  
+                      <pou:menuitem value="Baldwin Blazers (Indoor)"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setTrackClubIndoor()}" />  
+                </pou:submenu>
+                 
+                  
+              </pou:column>
+             <pou:column>
+                   <pou:submenu label="Track and Field (inDoor)">
+                      <pou:menuitem value="Baldwin Blazers"  
+                      style=" font-size: 14px"
+                      action="#{mgrVideoProduction.videoMgrObjMenu.setTrackClubIndoor()}" />  
+                  </pou:submenu>
+              </pou:column>
+                  </pou:submenu>
+             
+        
+        <pou:submenu label="Contact" style=" font-size: 14px" >
+            <pou:column >
+                <pou:submenu label="user Session">
+                    <pou:menuitem value="Login" 
+                                  action="#{mgrVideoProduction.userLogin()}"
+                                  style=" font-size: 13px"  />
+                    <pou:menuitem value="Logout" 
+                                  action="#{mgrVideoProduction.userLogout()}"
+                                  style=" font-size: 13px"  />
+                </pou:submenu>
+
+            </pou:column>
+        </pou:submenu>
+    </pou:megaMenu>
+
+
+</html>
+

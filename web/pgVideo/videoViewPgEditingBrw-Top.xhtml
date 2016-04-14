@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"   
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:pou="http://primefaces.org/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core" 
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:include src="videoViewPgEditingBrw-Style.xhtml" />
+     
+    <pou:carousel var="videoBean" value="#{videoMgrObj.list}"  
+                              style=" padding:  0; font-size: 15px ;width: 100%; height: 50%;  background:  transparent; border-color:  transparent;"  
+                              itemStyle="text-align: center"   firstVisible="4"  pageLinks="10" 
+                              numVisible="1"   autoPlayInterval="10000"  circular ="true" 
+                              styleClass="panelColumnsTop" 
+                              >
+                  
+                    <h:panelGrid columns="1"  style="width:530px; margin:0px 0px;  background:  transparent" >
+
+                        <h:commandLink action="#{videoMgrObj.setSelected()}"   >
+                            <f:setPropertyActionListener 
+                                value="#{videoBean}" 
+                                target="#{videoMgrObj.videoBean}" />
+
+                            <img src="/#{videoBean.imageName}" alt="" width="650" height="350" style=" background:  transparent"/>
+                            <br/>
+                            <pou:inputTextarea  rows="2" cols="80" readonly="true" 
+                                                value="#{videoBean.videoDesc}"   
+                                                style=" text-align:  center ;font-size: 16px; box-shadow: none; border:   white; background:   transparent; background-color:  transparent"  />
+
+                        </h:commandLink>
+
+                    </h:panelGrid>
+
+
+                </pou:carousel>
+    <br/>
+    <pou:commandButton value="Add New Video"  action="#{videoMgrObj.addNewVideo()}" rendered="#{mgrVideoProduction.login}" />
+</html>
+
